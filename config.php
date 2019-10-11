@@ -1,7 +1,7 @@
 
 <?php
 
-$databaseHost = 'https://remotemysql.com/';
+$databaseHost = 'remotemysql.com:3306';
 $databaseName = 'LyxdNUa4xS';
 $databaseUsername = 'LyxdNUa4xS';
 $databasePassword = '9SlYHcL3Ki';
