@@ -53,6 +53,14 @@ if ($_GET["action"] == 'MesArticlesFavoris'){
      echo json_encode($stmt->fetchAll());
 }
 
+if ($_GET["action"] == 'listeArticlesFavoris'){
+    $sql = "SELECT a.* from `favoris` as f ,`articles` as a WHERE f.id_article = a.id and f.id_publicateur = '".$_GET["id_publicateur"]."' ORDER BY id DESC";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute();
+     echo json_encode($stmt->fetchAll());
+}
+
+
 
 
  ?>
