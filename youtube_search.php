@@ -2,11 +2,13 @@
 
 
 $titre = $_GET['titre']; //Hedhi twali te5ouha parametre
-
-$resultsCount = 3 ; //9adeh men result 7achték
+if(isset($_GET['count'])) {
+	$resultsCount = $_GET['count'];
+}
+else  $resultsCount = 3 ; //default value
 $titre = str_replace(" ","+",$titre);
 
-$API_KEY = "AIzaSyBVgiVDNZ6F4-vxSL1JN5bxIB0vHKt2VYc" ; //Badel el API key beli 3andék...
+$API_KEY = "AIzaSyCG1_YDm-9y6I4HDNr59s9OnztO0DtIXeg" ; //Badel el API key beli 3andék...
 $search_url="https://www.googleapis.com/youtube/v3/search?part=id&chart=mostPopular&type=video&key=".$API_KEY."&q=".$titre."+vape+Unboxing&safeSearch=strict&maxResults=".$resultsCount;
 $response1 = json_decode(file_get_contents($search_url),true);
 
