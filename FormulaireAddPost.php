@@ -10,7 +10,7 @@ if($_GET["action"] == 'ADDPOST'){
      ,'".$_GET["ville"]."','".$_GET["latitude"]."','".$_GET["langitude"]."','".$_GET["videoid"]."')";
     $result = mysqli_query($mysqli,$sql);
     echo $sql;
-    echo "resultat : ".$result;
+    //echo "resultat : ".$result;
 }
 
 
