@@ -30,7 +30,13 @@ if($_GET["action"] == 'Inscription'){
     echo "[{'id':'$last_id','0':'$last_id'}]";
 }
 
+if($_GET["action"] == 'inscription'){
+    $sql = "INSERT INTO `login`(`idfb`,`nom`, `prenom`, `email`, `password`, `localisation`, `naissance`, `tel`, `image`)
+     VALUES ('".$_GET["idfb"]."','".$_GET["nom"]."','".$_GET["prenom"]."','".$_GET["email"]."','".$_GET["password"]."','".$_GET["localisation"]."','".$_GET["naissance"]."','".$_GET["tel"]."','".$_GET["image"]."')";
 
+   $stmt = $conn->prepare($sql);
+   $stmt->execute();
+}
 
 if ($_GET["action"] == 'GETPROFILE'){
 
