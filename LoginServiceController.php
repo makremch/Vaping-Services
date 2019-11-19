@@ -24,7 +24,8 @@ $stmt->execute();
 if($_GET["action"] == 'Inscription'){
     $sql = "INSERT INTO `login`(`idfb`,`nom`, `prenom`, `email`, `password`, `localisation`, `naissance`, `tel`, `image`)
      VALUES ('".$_GET["idfb"]."','".$_GET["nom"]."','".$_GET["prenom"]."','".$_GET["email"]."','".$_GET["password"]."','".$_GET["localisation"]."','".$_GET["naissance"]."','".$_GET["tel"]."','".$_GET["image"]."')";
-    $result = mysqli_query($mysqli,$sql);
+ die($sql);   
+ $result = mysqli_query($mysqli,$sql);
     $last_id = $mysqli->insert_id;
     echo "[{'id':'$last_id','0':'$last_id'}]";
 }
