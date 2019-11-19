@@ -14,4 +14,14 @@ if($_GET["action"] == 'ADDPOST'){
 }
 
 
+if($_GET["action"] == 'ajoutProduit'){
+    $sql = "INSERT INTO `articles`(`nomprenom` , `description`, `prix`, `idpublicateur` ,`categorie`, `image` ,`image_publicateur`,`ville`,`videoid`) VALUES
+     ('".$_GET["nomprenom"]."','".$_GET["description"]."','".$_GET["prix"]."','".$_GET["idpublicateur"]."','".$_GET["categorie"]."','".$_GET["image"]."','".$_GET["image_publicateur"]."'
+     ,'".$_GET["ville"]."','".$_GET["videoid"]."')";
+    $stmt = $conn->prepare($sql);
+   $stmt->execute();
+
+}
+
+
  ?>
